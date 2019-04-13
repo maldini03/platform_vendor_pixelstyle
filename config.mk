@@ -1,4 +1,5 @@
 # Copyright (C) 2017 The Pure Nexus Project
+# Copyright (C) 2019 The Evolution X Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +15,12 @@
 
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
-    AmbientPlayProvider \
     SoundPickerPrebuilt \
     WallpaperPickerGooglePrebuilt \
     NexusLauncherPrebuilt \
     WellbeingPrebuilt \
     MarkupGoogle \
+    NexusWallpapersStubPrebuilt2018 \
     WeatherClient
 
 ifeq ($(TARGET_GAPPS_ARCH),arm64)
@@ -28,11 +29,6 @@ PRODUCT_PACKAGES += \
 endif
 
 TARGET_MINIMAL_APPS ?= false
-
-ifeq ($(TARGET_MINIMAL_APPS), false)
-PRODUCT_PACKAGES += \
-    NexusWallpapersStubPrebuilt2018
-endif
 
 # build.prop entrys
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -85,6 +81,5 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Weather
 PRODUCT_COPY_FILES += \
-    vendor/pixelstyle/etc/permissions/org.pixelexperience.ambient.play.xml:system/etc/permissions/org.pixelexperience.ambient.play.xml \
     vendor/pixelstyle/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
     vendor/pixelstyle/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml

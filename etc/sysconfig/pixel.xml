@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- These are configurations that should exist on Google's 2019 and newer Pixel devices. -->
 <config>
     <!-- This is meant to be the canonical feature identifying 2016 and newer Nexus devices. -->
     <feature name="com.google.android.feature.PIXEL_EXPERIENCE" />
@@ -16,4 +18,21 @@
     <!--feature name="com.google.android.apps.photos.PIXEL_2017_PRELOAD" /-->
     <!-- This is meant to be the canonical feature identifying 2017 and newer Nexus devices. -->
     <feature name="com.google.android.feature.PIXEL_2017_EXPERIENCE" />
+
+    <!-- This defines the Photos preload feature for specifically the 2018 Pixel devices. -->
+    <!--feature name="com.google.android.apps.photos.PIXEL_2018_PRELOAD" /-->
+    <!-- This is meant to be the canonical feature identifying 2018 and newer Pixel devices. -->
+    <feature name="com.google.android.feature.PIXEL_2018_EXPERIENCE" />
+
+    <!-- This defines the Photos preload feature for specifically the 2019 mid-year Pixel devices. -->
+    <feature name="com.google.android.apps.photos.PIXEL_2019_MIDYEAR_PRELOAD" />
+    <!-- This is meant to be the canonical feature identifying 2019 mid-year and newer Pixel devices. -->
+    <feature name="com.google.android.feature.PIXEL_2019_MIDYEAR_EXPERIENCE" />
+
+    <!-- This feature is meant to be the feature identifying a device supports wireless charger -->
+    <feature name="com.google.android.feature.DREAMLINER" />
+
+    <!-- The feature identifying devices which are able to use the Android Flip to shhh. -->
+    <feature name="com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.autodnd.ui.AutoDndGesturesSettingsActivity" />
+
 </config>
