@@ -38,17 +38,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
      ifeq ($(TARGET_BOOT_ANIMATION_RES_DARK),true)
           PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_dark_720.zip:system/media/bootanimation.zip
+     else ifeq ($(TARGET_BOOT_ANIMATION_RES_EVO),true)
+          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_evo_720.zip:system/media/bootanimation.zip
      else
           PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_720.zip:system/media/bootanimation.zip
      endif
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
      ifeq ($(TARGET_BOOT_ANIMATION_RES_DARK),true)
           PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_dark_1080.zip:system/media/bootanimation.zip
+     else ifeq ($(TARGET_BOOT_ANIMATION_RES_EVO),true)
+          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_evo_1080.zip:system/media/bootanimation.zip
      else
           PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_1080.zip:system/media/bootanimation.zip
      endif
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_1440.zip:system/media/bootanimation.zip
+     ifeq ($(TARGET_BOOT_ANIMATION_RES_EVO),true)
+          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_evo_1440.zip:system/media/bootanimation.zip
+     else
+          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_1440.zip:system/media/bootanimation.zip
+     endif
 else
      $(warning "PixelStyle: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
      PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_1080.zip:system/media/bootanimation.zip
