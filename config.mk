@@ -17,11 +17,8 @@
 PRODUCT_PACKAGES += \
     SoundPickerPrebuilt \
     WallpaperPickerGooglePrebuilt \
-    NexusLauncherPrebuilt \
-    WellbeingPrebuilt \
     MarkupGoogle \
-    NexusWallpapersStubPrebuilt2018 \
-    WeatherClient
+    NexusWallpapersStubPrebuilt2018
 
 ifeq ($(TARGET_GAPPS_ARCH),arm64)
 PRODUCT_PACKAGES += \
@@ -33,45 +30,6 @@ TARGET_MINIMAL_APPS ?= false
 # build.prop entrys
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.wallpapers_loc_request_suw=true
-
-# Bootanimation
-ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
-     ifeq ($(TARGET_BOOT_ANIMATION_RES_DARK),true)
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_dark_720.zip:system/media/bootanimation.zip
-     else ifeq ($(TARGET_BOOT_ANIMATION_RES_EVO),true)
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_evo_720.zip:system/media/bootanimation.zip
-     else
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_720.zip:system/media/bootanimation.zip
-     endif
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     ifeq ($(TARGET_BOOT_ANIMATION_RES_DARK),true)
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_dark_1080.zip:system/media/bootanimation.zip
-     else ifeq ($(TARGET_BOOT_ANIMATION_RES_EVO),true)
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_evo_1080.zip:system/media/bootanimation.zip
-     else
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_1080.zip:system/media/bootanimation.zip
-     endif
-else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     ifeq ($(TARGET_BOOT_ANIMATION_RES_EVO),true)
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_evo_1440.zip:system/media/bootanimation.zip
-     else
-          PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_1440.zip:system/media/bootanimation.zip
-     endif
-else
-     $(warning "PixelStyle: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
-     PRODUCT_COPY_FILES += vendor/pixelstyle/media/bootanimation_1080.zip:system/media/bootanimation.zip
-endif
-
-# Fonts
-PRODUCT_COPY_FILES += \
-    vendor/pixelstyle/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
-    vendor/pixelstyle/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
-    vendor/pixelstyle/fonts/GoogleSans-MediumItalic.ttf:system/fonts/GoogleSans-MediumItalic.ttf \
-    vendor/pixelstyle/fonts/GoogleSans-Italic.ttf:system/fonts/GoogleSans-Italic.ttf \
-    vendor/pixelstyle/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
-    vendor/pixelstyle/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
-
-ADDITIONAL_FONTS_FILE := vendor/pixelstyle/fonts/google-sans.xml
 
 # Pixel sysconfig
 PRODUCT_COPY_FILES += \
@@ -94,8 +52,3 @@ endif
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pixelstyle/overlay
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/pixelstyle/overlay/common/
-
-# Weather
-PRODUCT_COPY_FILES += \
-    vendor/pixelstyle/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
-    vendor/pixelstyle/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
