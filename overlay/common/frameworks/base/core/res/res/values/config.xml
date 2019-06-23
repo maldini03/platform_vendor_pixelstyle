@@ -42,12 +42,6 @@
     <string name="config_defaultSystemCaptionsService">com.google.android.as/com.google.android.apps.miphone.aiai.captions.CaptionsService</string>
     <string name="config_defaultTextClassifierPackage">com.google.android.as</string>
     <string name="config_defaultWellbeingPackage">com.google.android.apps.wellbeing</string>
-    <string name="config_headlineFontFamily">google-sans</string>
-    <string name="config_headlineFontFamilyLight">google-sans</string>
-    <string name="config_headlineFontFeatureSettings">ss03</string>
-    <string name="config_headlineFontFamilyMedium">google-sans-medium</string>
-    <string name="config_recentsComponentName">com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string>
-    <string name="config_secondaryHomeComponent">com.google.android.apps.nexuslauncher/com.android.launcher3.SecondaryDisplayLauncher</string>
     <bool name="config_buttonTextAllCaps">false</bool>
     <bool name="config_unplugTurnsOnScreen">true</bool>
     <bool name="config_sendPackageName">true</bool>
