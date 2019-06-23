@@ -17,8 +17,7 @@
 PRODUCT_PACKAGES += \
     SoundPickerPrebuilt \
     WallpaperPickerGooglePrebuilt \
-    MarkupGoogle \
-    NexusWallpapersStubPrebuilt2018
+    MarkupGoogle
 
 ifeq ($(TARGET_GAPPS_ARCH),arm64)
 PRODUCT_PACKAGES += \
